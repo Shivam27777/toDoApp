@@ -1,12 +1,12 @@
-const zod = requre("zod");
+const zod = require("zod");
 
 const createTodo = zod.object({
-    title : zod.string(),
-    description : zod.stirng()
+    title : zod.string().min(1),
+    description : zod.string().min(1)
 })
 
 const updateTodo = zod.object({
-    id : zod.stirng(),
+    id : zod.string(),
 })
 module.exports = {
     createTodo : createTodo,
